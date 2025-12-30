@@ -1,0 +1,7 @@
+site_name: MicroAccount User Manual
+theme: readthedocs
+nav:
+  - 'หน้าแรก': index.md
+  - 'การตั้งค่าระบบ': setup.md
+  - 'การออกเอกสาร': documents.md
+  - 'การจัดการสต็อก': stock.md
