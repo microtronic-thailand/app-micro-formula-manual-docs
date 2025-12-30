@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>การจัดการสต็อก - MicroAccount User Manual</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u0e01\u0e32\u0e23\u0e08\u0e31\u0e14\u0e01\u0e32\u0e23\u0e2a\u0e15\u0e47\u0e2d\u0e01";
+        var mkdocs_page_input_path = "stock.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> MicroAccount User Manual
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">หน้าแรก</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../setup/">การตั้งค่าระบบ</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../documents/">การออกเอกสาร</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">การจัดการสต็อก</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-product-catalog">1. การจัดการสินค้า (Product Catalog)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-qr-code-system">2. นวัตกรรม QR Code System 📱</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-stock-movements">3. ประวัติการเคลื่อนไหวสต็อก (Stock Movements)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sticker-qr-code">🛠️ วิธีพิมพ์ Sticker QR Code</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_1">💡 ข้อควรระวัง</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../reports/">รายงานและภาษี</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../backup-recovery/">การสำรองและกู้คืน</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">MicroAccount User Manual</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">การจัดการสต็อก</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="qr-code-inventory-control">📦 คลังสินค้าและเทคโนโลยี QR Code (Inventory Control)</h1>
+<p>MicroAccount ช่วยให้คุณจัดการสต็อกสินค้าได้อย่างเป็นระบบ ลดความผิดพลาดในการนับจำนวน และเข้าถึงข้อมูลได้ทันใจด้วย QR Code</p>
+<hr />
+<h2 id="1-product-catalog">1. การจัดการสินค้า (Product Catalog)</h2>
+<ul>
+<li><strong>SKU / Barcode</strong>: กำหนดรหัสสินค้าเพื่อความเป็นระเบียบ</li>
+<li><strong>Min Stock Level (จุดสั่งซื้อ)</strong>: ระบบจะแจ้งเตือนเมื่อสินค้าลดลงถึงจุดที่กำหนด เพื่อให้คุณสั่งของเพิ่มได้ทันเวลา</li>
+<li><strong>Standard Price</strong>: กำหนดราคากลางเพื่อให้เวลาออก Invoice ระบบจะดึงราคามาให้อัตโนมัติ</li>
+</ul>
+<h2 id="2-qr-code-system">2. นวัตกรรม QR Code System 📱</h2>
+<p>เรานำระบบ QR Code มาช่วยให้การทำงานในคลังเร็วขึ้น
+- <strong>Print Labels</strong>: คุณสามารถสั่งพิมพ์สติกเกอร์ QR Code ไปติดที่ชั้นวางหรือตัวสินค้าได้
+- <strong>Scan to View</strong>: เพียงสแกนด้วยโทรศัพท์มือถือ คุณจะทราบทันทีว่าสินค้าชิ้นนั้นเหลือเท่าไหร่ มีราคาเท่าไหร่ โดยไม่ต้องเดินไปเช็คที่คอมพิวเตอร์</p>
+<h2 id="3-stock-movements">3. ประวัติการเคลื่อนไหวสต็อก (Stock Movements)</h2>
+<p>ทุกการเข้า-ออกจะถูกบันทึกไว้อย่างละเอียด
+- <strong>Automatic Deduct</strong>: เมื่อมีการกด "บันทึก" ในหน้า Invoice ระบบจะตัดสต็อกสินค้าเหล่านั้นออกให้อัตโนมัติ
+- <strong>Manual Adjust</strong>: หากมีการทำของหาย, ชำรุด หรือรับของเข้าเติมสต็อก สามารถเลือกปรับปรุง (Adjust) ได้โดยระบุเหตุผลประกอบ</p>
+<hr />
+<h2 id="sticker-qr-code">🛠️ วิธีพิมพ์ Sticker QR Code</h2>
+<ol>
+<li>ไปที่หน้าเมนู <strong>สินค้า (Products)</strong></li>
+<li>คลิกที่ไอคอน <strong>QR</strong> ในแถวของสินค้าที่ต้องการ</li>
+<li>ระบบจะแสดงหน้าต่างตัวอย่าง Sticker (ชื่อสินค้า, ราคา, รหัส)</li>
+<li>กดพิมพ์ออกเครื่องพิมพ์ Thermal หรือ Printer ทั่วไป</li>
+</ol>
+<hr />
+<h2 id="_1">💡 ข้อควรระวัง</h2>
+<blockquote>
+<p><strong>ตรวจสอบจำนวนเริ่มต้นให้แม่นยำ</strong>: ก่อนเริ่มใช้งานระบบจริง ควรทำการตรวจนับสต็อก (Physical Count) และนำตัวเลขที่ถูกต้องมากรอกในช่อง Initial Stock เพื่อความแม่นยำของรายงานในอนาคต</p>
+</blockquote>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../documents/" class="btn btn-neutral float-left" title="การออกเอกสาร"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../reports/" class="btn btn-neutral float-right" title="รายงานและภาษี">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../documents/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../reports/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

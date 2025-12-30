@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>การสำรองและกู้คืน - MicroAccount User Manual</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u0e01\u0e32\u0e23\u0e2a\u0e33\u0e23\u0e2d\u0e07\u0e41\u0e25\u0e30\u0e01\u0e39\u0e49\u0e04\u0e37\u0e19";
+        var mkdocs_page_input_path = "backup-recovery.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> MicroAccount User Manual
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">หน้าแรก</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../setup/">การตั้งค่าระบบ</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../documents/">การออกเอกสาร</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../stock/">การจัดการสต็อก</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../reports/">รายงานและภาษี</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">การสำรองและกู้คืน</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-local-database-docker">1. กรณีใช้งาน Local Database (Docker) 🏠</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#backup">การสำรองข้อมูล (Backup)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#restore">การกู้คืนข้อมูล (Restore)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-supabase-cloud">2. กรณีใช้งาน Supabase Cloud ☁️</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#backup_1">การสำรองข้อมูล (Backup)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#recovery">การกู้คืนข้อมูล (Recovery)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-update-plan">3. แผนการอัปเดตเวอร์ชัน (Update Plan) 🔄</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#docker">กรณีใช้งาน Docker (แนะนำ)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#manual-npm-run-dev">กรณีรัน Manual (npm run dev)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#summary">สรุป (Summary)</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">MicroAccount User Manual</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">การสำรองและกู้คืน</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="backup-recovery-guide">คู่มือการสำรองและกู้คืนข้อมูล (Backup &amp; Recovery Guide)</h1>
+<p>เอกสารนี้อธิบายวิธีการสำรองข้อมูล (Backup) และกู้คืนข้อมูล (Restore) สำหรับระบบ MicroAccount ทั้งในกรณีใช้งานผ่าน Cloud (Supabase) และ Local Database</p>
+<hr />
+<h2 id="1-local-database-docker">1. กรณีใช้งาน Local Database (Docker) 🏠</h2>
+<p>หากคุณรันระบบบนเครื่องตัวเองโดยใช้ Docker ข้อมูลจะถูกเก็บอยู่ใน Docker Volume การสำรองข้อมูลทำได้ง่ายๆ ด้วยสคริปต์ที่เราเตรียมไว้ให้</p>
+<h3 id="backup">การสำรองข้อมูล (Backup)</h3>
+<ol>
+<li>เปิด Terminal ในโฟลเดอร์ของโปรเจกต์</li>
+<li>รันคำสั่ง:
+   <code>bash
+   ./scripts/backup-local-db.sh</code></li>
+<li>ระบบจะสร้างไฟล์ <code>.sql</code> ที่ระบุวันที่และเวลาไว้ในโฟลเดอร์ <code>backups/</code> เช่น <code>backups/backup_2025-12-31_12-00-00.sql</code></li>
+</ol>
+<blockquote>
+<p><strong>แนะนำ:</strong> ควรตั้งเวลาให้รันสคริปต์นี้ทุกวัน (Automated Cron Job) หรือกดรันเองทุกครั้งที่มีการปิดยอดบัญชีสำคัญ</p>
+</blockquote>
+<h3 id="restore">การกู้คืนข้อมูล (Restore)</h3>
+<p>กรณีเครื่องพัง หรือต้องการย้อนกลับไปยังจุดก่อนหน้า
+1. เลือกไฟล์ Backup ที่ต้องการจากโฟลเดอร์ <code>backups/</code>
+2. รันคำสั่ง (แทนที่ <code>&lt;path_to_file&gt;</code> ด้วยชื่อไฟล์จริง):
+   <code>bash
+   ./scripts/restore-local-db.sh backups/backup_2025-xxx.sql</code>
+3. พิมพ์ <code>y</code> เพื่อยืนยัน
+4. รอจนกว่าระบบจะแจ้งว่า <strong>Restoration successful!</strong></p>
+<hr />
+<h2 id="2-supabase-cloud">2. กรณีใช้งาน Supabase Cloud ☁️</h2>
+<p>หากคุณใช้งานผ่าน Supabase Cloud ระบบจะมีระบบ Backup อัตโนมัติอยู่แล้ว แต่คุณสามารถทำ Manual Backup ได้ดังนี้</p>
+<h3 id="backup_1">การสำรองข้อมูล (Backup)</h3>
+<ol>
+<li>เข้าไปที่ <a href="https://supabase.com/dashboard">Supabase Dashboard</a></li>
+<li>เลือก Project ของคุณ</li>
+<li>ไปที่เมนู <strong>Database</strong> -&gt; <strong>Backups</strong></li>
+<li>คุณสามารถดาวน์โหลดไฟล์สำรองข้อมูลได้จากหน้านี้</li>
+<li>หรือใช้ CLI: <code>supabase db dump -f supabase.sql</code></li>
+</ol>
+<h3 id="recovery">การกู้คืนข้อมูล (Recovery)</h3>
+<ul>
+<li>ในหน้า <strong>Database</strong> -&gt; <strong>Backups</strong> คุณสามารถกด <strong>Restore</strong> เพื่อย้อนข้อมูลกลับไปยังช่วงเวลาที่ต้องการได้ (Point-in-Time Recovery - PITR) ขึ้นอยู่กับแพ็กเกจที่คุณใช้งาน</li>
+</ul>
+<hr />
+<h2 id="3-update-plan">3. แผนการอัปเดตเวอร์ชัน (Update Plan) 🔄</h2>
+<p>เมื่อมีเวอร์ชันใหม่ของ MicroAccount ออกมา ลูกค้าสามารถอัปเดตได้ดังนี้:</p>
+<h3 id="docker">กรณีใช้งาน Docker (แนะนำ)</h3>
+<ol>
+<li>ดึงโค้ดเวอร์ชันล่าสุด:
+   <code>bash
+   git pull origin main</code></li>
+<li>อัปเดต Container:
+   <code>bash
+   docker-compose pull
+   docker-compose up -d --build</code></li>
+<li>ระบบจะทำงานต่อด้วยโค้ดใหม่และข้อมูลเดิม (Database ไม่หาย)</li>
+</ol>
+<h3 id="manual-npm-run-dev">กรณีรัน Manual (npm run dev)</h3>
+<ol>
+<li>หยุดการทำงานของ Server (Ctrl+C)</li>
+<li>ดึงโค้ดล่าสุด: <code>git pull</code></li>
+<li>ลง Dependencies ใหม่ (เผื่อมี): <code>npm install</code></li>
+<li>รันใหม่: <code>npm run dev</code></li>
+</ol>
+<hr />
+<h2 id="summary">สรุป (Summary)</h2>
+<ul>
+<li><strong>ข้อมูลสำคัญที่สุดคือ Database</strong>: ไฟล์โค้ดโปรแกรมหายสามารถโหลดใหม่ได้ แต่ Database หายคือหายเลย</li>
+<li><strong>ความถี่ในการ Backup</strong>: แนะนำวันละ 1 ครั้ง หรือทันทีหลังปิดงบเดือน</li>
+<li><strong>การทดสอบ</strong>: ควรลองกู้คืนข้อมูล (Restore) ในเครื่องสำรองปีละ 1-2 ครั้ง เพื่อมั่นใจว่าไฟล์ Backup ใช้งานได้จริง</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../reports/" class="btn btn-neutral float-left" title="รายงานและภาษี"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../reports/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

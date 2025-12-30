@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>รายงานและภาษี - MicroAccount User Manual</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u0e23\u0e32\u0e22\u0e07\u0e32\u0e19\u0e41\u0e25\u0e30\u0e20\u0e32\u0e29\u0e35";
+        var mkdocs_page_input_path = "reports.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> MicroAccount User Manual
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">หน้าแรก</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../setup/">การตั้งค่าระบบ</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../documents/">การออกเอกสาร</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../stock/">การจัดการสต็อก</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">รายงานและภาษี</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-finance-report">1. รายงานสรุปผลการดำเนินงาน (Finance Report) 📈</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-tax-center">2. ศูนย์รวมภาษี (Tax Center) 🛡️</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-withholding-tax-wht">3. ภาษีหัก ณ ที่จ่าย (Withholding Tax - WHT) 💸</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#audit-trail">🔍 ประวัติการใช้งาน (Audit Trail)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#bank-reconciliation">🏦 การกระทบยอดธนาคาร (Bank Reconciliation)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_1">💡 คำแนะนำสำหรับนักบัญชี</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../backup-recovery/">การสำรองและกู้คืน</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">MicroAccount User Manual</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">รายงานและภาษี</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="reports-taxes">📊 ระบบรายงานและภาษี (Reports &amp; Taxes)</h1>
+<p>MicroAccount มาพร้อมกับศูนย์รวมรายงานที่ช่วยให้คุณเห็นภาพรวมของธุรกิจได้แบบ Real-time และเตรียมข้อมูลส่งนักบัญชีได้ในคลิกเดียว</p>
+<hr />
+<h2 id="1-finance-report">1. รายงานสรุปผลการดำเนินงาน (Finance Report) 📈</h2>
+<p>เข้าถึงได้จากเมนู <strong>"สรุปยอดรายวัน"</strong>
+- <strong>งบกำไรขาดทุนเบื้องต้น</strong>: สรุปรายรับจากการขาย หักลบรายจ่ายรายเดือน เพื่อดูว่าเดือนนี้ธุรกิจมีกำไรหรือขาดทุนเท่าไร
+- <strong>แยกหมวดหมู่รายจ่าย</strong>: ดูว่าคุณใช้เงินไปกับค่าสินค้า, ค่าโฆษณา, หรือค่าใช้จ่ายสำนักงานมากที่สุดในรูปแบบกราฟ
+- <strong>การพิมพ์รายงาน</strong>: มีปุ่ม "พิมพ์สรุป PDF" เพื่อออกเป็นรายงานที่เป็นทางการ พร้อมมีลายเซ็นรับรอง</p>
+<h2 id="2-tax-center">2. ศูนย์รวมภาษี (Tax Center) 🛡️</h2>
+<p>เข้าถึงได้จากเมนู <strong>"รายงานภาษี"</strong>
+- <strong>รายงานภาษีขาย (VAT Output)</strong>: รวบรวมข้อมูลจากใบแจ้งหนี้ที่ "จ่ายแล้ว" ทั้งหมดในเดือนนั้น
+- <strong>รายงานภาษีซื้อ (VAT Input)</strong>: รวบรวมข้อมูลจากรายการรายจ่ายที่คุณระบุว่า "รวม VAT"
+- <strong>ส่วนต่างภาษี (Net VAT)</strong>: ระบบจะคำนวณให้ทันทีว่าเดือนนี้คุณต้องจ่ายภาษีมูลค่าเพิ่มเท่าไร หรือมีภาษีซื้อเกินเท่าไร
+- <strong>ส่งออกข้อมูล (Export to CSV)</strong>: สามารถกดปุ่ม CSV เพื่อโหลดไฟล์ไปให้นักบัญชีใช้ยื่นแบบ ภ.พ. 30 ได้ทันที</p>
+<h2 id="3-withholding-tax-wht">3. ภาษีหัก ณ ที่จ่าย (Withholding Tax - WHT) 💸</h2>
+<p>ระบบรองรับการบันทึกภาษีหัก ณ ที่จ่ายตามมาตรฐานสรรพากร
+- <strong>รายได้</strong>: เมื่อลูกค้าหักภาษีเราไว้ ระบบจะสรุปยอดเพื่อใช้ยื่น ภ.ง.ด. 50 ทวิ สิ้นปี
+- <strong>รายจ่าย</strong>: เมื่อเราจ่ายค่าบริการและหักภาษีผู้ขายไว้ (เช่น 3%) ระบบจะสรุปยอดเพื่อเตรียมนำส่ง ภ.ง.ด. 3 หรือ 53 ในเดือนถัดไป</p>
+<hr />
+<h2 id="audit-trail">🔍 ประวัติการใช้งาน (Audit Trail)</h2>
+<p>เพื่อความโปร่งใสและตรวจสอบได้ ระบบจะมีการบันทึกทุก "การกระทำ" ที่สำคัญไว้เสมอ
+- <strong>ใคร ทำอะไร เมื่อไหร่</strong>: บันทึกว่ามีการสร้างใบแจ้งหนี้, แก้ไขรายจ่าย, หรือลบข้อมูลใดๆ โดยใคร และเวลาใด
+- <strong>การตรวจสอบย้อนหลัง</strong>: ผู้ดูแลระบบ (Super Admin) สามารถเข้าดูเมนู "ประวัติการใช้งาน" ในส่วนของ Admin เพื่อตรวจสอบความผิดพลาดหรือทุจริตได้</p>
+<hr />
+<h2 id="bank-reconciliation">🏦 การกระทบยอดธนาคาร (Bank Reconciliation)</h2>
+<p>ในหน้าบันทึกรายจ่ายและใบแจ้งหนี้ จะมีวงกลม "Checkbox" สำหรับกด <strong>สะสางรายการ</strong>
+- <strong>การสะสาง (Reconcile)</strong>: ใช้เมื่อคุณตรวจสอบ Statement ธนาคารแล้วพบว่ายอดเงินเข้า/ออกตรงกับรายการในระบบ
+- <strong>การติดตาม</strong>: ช่วยให้คุณมั่นใจว่าข้อมูลในโปรแกรมบัญชี ตรงกับคนถือสมุดบัญชีจริงๆ</p>
+<hr />
+<h2 id="_1">💡 คำแนะนำสำหรับนักบัญชี</h2>
+<blockquote>
+<p><strong>การแนบเอกสาร:</strong> ในหน้าบันทึกรายจ่าย คุณสามารถนำลิงก์รูปภาพใบเสร็จที่เก็บไว้ใน Cloud มาใส่ในช่อง "ลิงก์รูปภาพ/ไฟล์แนบ" เพื่อให้เรียกดูหลักฐานได้ทันทีโดยไม่ต้องรื้อแฟ้มสะสมเอกสาร</p>
+</blockquote>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../stock/" class="btn btn-neutral float-left" title="การจัดการสต็อก"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../backup-recovery/" class="btn btn-neutral float-right" title="การสำรองและกู้คืน">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../stock/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../backup-recovery/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
