@@ -5,3 +5,5 @@ nav:
   - 'การตั้งค่าระบบ': setup.md
   - 'การออกเอกสาร': documents.md
   - 'การจัดการสต็อก': stock.md
+  - 'รายงานและภาษี': reports.md
+  - 'การสำรองและกู้คืน': backup-recovery.md
