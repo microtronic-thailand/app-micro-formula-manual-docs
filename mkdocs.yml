@@ -1,5 +1,16 @@
 site_name: MicroAccount User Manual
-theme: readthedocs
+theme:
+  name: material
+  language: th
+  palette:
+    primary: teal
+    accent: teal
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - search.suggest
+    - search.highlight
+
 nav:
   - 'หน้าแรก': index.md
   - 'การตั้งค่าระบบ': setup.md
